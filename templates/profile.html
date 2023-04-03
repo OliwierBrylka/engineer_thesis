@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <h1>Profile</h1>
+    <div class="left-bar">
+        <div class="options">
+            <a href="profile">Profile</a>
+            <a href="logout">Log Out</a>
+        </div>
+    </div>
+
+    <!-- <div>
+        {% for i in auta %}
+        <div>
+            <p>{{i}}</p>
+        </div>
+        {% endfor %}
+    </div> -->
+    <div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Marka:</p><input type="text" name="marka"/>
+            <p>Model:</p><input type="text" name="marka"/>
+            <p>Aktualny przebieg</p><input type="text" name="kilometry"/>
+            <input type="submit" name="create" value="Dodaj"/>
+        </form>
+    </div>
+
+
+</body>
+
+
+</html>

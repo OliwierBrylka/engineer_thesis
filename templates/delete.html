@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+
+</head>
+
+<body>
+    <div class="form">
+        <h3 style="color: white;font-size: 2em;">Czy na pewno chcesz usunąc pojazd {{car.marka}}?</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- <input type="submit" value="Tak" name="delete">   -->
+            <button class="bn5" type="submit" name="delete" style="margin-left:40%">Tak</button>   
+        </form>
+            <!-- <input type=button value="Nie" onClick="javascript:history.go(-1);"> -->
+            <button class="bn5" onClick="javascript:history.go(-1);" style="margin-left:40%">Nie</button>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'statystyki.css' %}">
+
+</head>
+
+<body>
+  <div >
+    <h3>{{users_car}}</h3>
+
+    <div class="form1">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="form1">
+        <canvas id="myChart2"></canvas>
+      </div>
+
+      <div class="form1">
+        <canvas id="myChart3"></canvas>
+      </div>
+    </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: {{labels|safe}},
+            datasets: [{
+              label: 'Cena',
+              data: {{data|safe}},
+              borderWidth: 5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        
+        const ctx2 = document.getElementById('myChart2');
+      
+        new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: {{labels|safe}},
+            datasets: [{
+              label: 'Litry',
+              data: {{data2|safe}},
+              borderWidth: 5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        const ctx3 = document.getElementById('myChart3');
+      
+        new Chart(ctx3, {
+          type: 'line',
+          data: {
+            labels: {{labels|safe}},
+            datasets: [{
+              label: 'Cena za litr',
+              data: {{data3|safe}},
+              borderWidth: 5
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+      </script>
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      
+      
+
+</body>
+
+
+</html>

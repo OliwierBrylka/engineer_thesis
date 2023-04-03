@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+
+</head>
+
+<body>
+        <div class="form"> 
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" class="form1" name="marka" value={{car.marka}}>
+                <input type="text" class="form1" name="model" value={{car.model}}>
+                <input type="number" class="form1" name="cena" value={{car.cena|floatformat:2}}>
+                <input type="number" class="form1" name="litry" value={{car.litry|floatformat:2}}>
+                <input type="number" class="form1" name="lcena" value={{car.lcena|floatformat:2}}>
+                
+                <button class="bn5" type="submit" name="Update">Gotowe</button>
+            </form>
+        </div>
+
+
+</body>
+
+
+</html>

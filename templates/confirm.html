@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+
+</head>
+
+<script>
+    const x = document.getElementsByName('cena');
+    const y = document.getElementsByName('litry');
+    const z = document.getElementsByName('lcena');
+    input.addEventListener('cena', updateValue);
+    input.addEventListener('litry', updateValue);
+
+    function updateValue(e) {
+        z.textContent = e.target.value;
+    }
+    
+
+</script>
+
+<body>
+    <div>
+    <h3>{{users_car}}</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="number" placeholder="Cena" class="form1" name="cena" value="{{cena|floatformat:2}}">
+        <input type="number" placeholder="Litry" class="form1" name="litry" value="{{litry|floatformat:2}}">
+        <input type="number"  placeholder="Cena za litr" class="form1" name="lcena" value="{{lcena|floatformat:2}}">
+        <button type="submit" name="add" class="bn5">Potwierdź</button>
+    </form>
+
+</div>
+</body>
+
+
+</html>

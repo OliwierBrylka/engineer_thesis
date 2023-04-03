@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+	width: 100%;
+  background: linear-gradient(to right,#2c5364, #203a43, #0f2027);
+  
+  height: 100vh;
+}
+
+.banner{
+  width: 100%;
+  height: 10%;
+  position: relative;
+  background: linear-gradient(to left,#0f2027, #203a43, #000000);
+  top:0;
+}
+.options{
+  position: relative;
+  justify-content: center;
+  padding-top: 1.3%;
+}
+
+.form{
+  display: flex;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.form1 {
+
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin-bottom: 0.7rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.out{
+  width: 25%;
+  height: auto;
+  position:relative;
+  top:0px;
+  margin-top: 1em;
+  margin-left: 2%;
+  border: 3px solid black;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.in{
+
+  margin:5%;
+  padding-top:5px;
+  text-align: left;
+}
+
+h1{
+  color:white;
+}
+h2{
+  color:white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.user{
+margin-left: 0.7rem;
+font-weight: bold;
+font-size: 2em;
+letter-spacing: 0.1em;
+text-decoration: none;
+color: white;
+display: inline-block;
+padding: 10px 40px 10px 40px;
+position: relative;
+}
+.bn5 {
+margin-left: 0.7rem;
+font-weight: bold;
+font-size: 1em;
+letter-spacing: 0.1em;
+text-decoration: none;
+color: black;
+display: inline-block;
+padding: 10px 40px 10px 40px;
+position: relative;
+border: 3px solid black;
+border-radius: 20px;
+}

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'style/tyle.css' %}">
+
+</head>
+
+<body>
+    <!-- <h1 class="test">Home Page</h1> -->
+    <div class="banner">
+        <div class="options">
+            <h1 class="user">Witamy {{user}}</h1>
+           <button class="bn5"><a href="">Home</a></button>
+            <button class="bn5"><a href="logout">Log Out</a></button>
+            
+        </div>
+    </div>
+    <div>
+        {% for message in messages %}
+        <h5 style="font-size: 4em; color: red; text-align: center;">{{message}} </h5>
+        {% endfor %}
+    </div>
+    <div class="form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Marka" class="form1" name="marka"/>
+            <input type="text" placeholder="Model" class="form1" name="model"/>
+            <!-- <input class="bn5" type="submit" name="create" value="Dodaj" /> -->
+            <button type="submit" name="create" class="bn5">Dodaj</button>
+        </form>
+    </div>
+    
+    {% for auto in auta %}
+    <div class="out">
+        <div class="in">
+        <h1>{{auto.marka}} {{auto.model}}</h1>
+        <h2>Wydane pieniądze: {{auto.cena|floatformat:2}} zł</h2>
+        <h2>Zatankowane litry: {{auto.litry|floatformat:2}} l</h2>
+        <h2>Twoja ostatnia cena paliwa: {{auto.lcena|floatformat:2}} zł</h2>
+            <button class="bn5"><a href="{% url 'add' auto.pk %}">Zatankowałem</a></button><br>
+            <button class="bn5"><a href="{% url 'edit' auto.pk %}">Edytuj</a></button><br>
+            <button class="bn5"><a href="{% url 'delete' auto.pk %}">Usuń</a></button><br>
+            <button class="bn5"><a href="{% url 'statystyki' auto.pk %}">Statystyki</a></button><br>
+        </div>
+    </div>
+    {% endfor %}
+    
+
+
+
+</body>
+
+
+</html>

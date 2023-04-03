@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+
+</head>
+<header>
+    <div class="top-bar">
+        <!-- <h1 class="top-text">FuelApp</h1> -->
+    </div> 
+
+</header>
+
+<body>
+    <div>
+        {% for message in messages %}
+        <h5 style="font-size: 4em; color: red; text-align: center;">{{message}} </h5>
+        {% endfor %}
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form"> <!-- formularz do logowania oraz wyboru do rejestracji-->
+            <div class="pool">
+                <input class="form1" placeholder="Użytkownik" type="text" name="username">
+                <input class="form1" placeholder="E-mail" type="email" name="email">
+                <input class="form1" placeholder="Hasło" type="password" name="password">
+                <input class="form1" placeholder="Powtóż hasło" type="password" name="repassword">
+            </div>
+            <div class="btn-box">
+                <button type="submit" class="bn5" name="register">Zarejestruj się</button>
+                <button type="button" class="bn5" onClick="javascript:history.go(-1);">Wróć</button>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</body>
+
+
+</html>

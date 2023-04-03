@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FuelApp</title>
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+
+</head>
+
+<body>
+    <div class="form">
+    <h3>{{users_car}}</h3>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" class="bn5" name="image" style="color:white">
+        <button type="submit" name="add" class="bn5">Potwierdź</button>
+    </form>
+</div>
+
+</body>
+
+
+</html>
